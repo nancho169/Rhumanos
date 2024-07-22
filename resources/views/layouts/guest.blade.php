@@ -31,20 +31,21 @@
 
         <link href="{{asset('fontawesome/css/font-awesome.min.css')}}" rel="stylesheet">
     </head>
-    <body class="nav-md">
-        <div class="container body">
-            <div class="main_container">
-                <div class="col-md-3 left_col">
+    <body class="login">
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+              <section class="login_content">
+               
            
             
 
            
 
             <!-- Page Content -->
-            <div class="right_col" role="main">
+            
                 {{ $slot }}
-            </div>
-        </div>
+              </section>
+        
     </div>
         </div>
                 <!-- INICIO SCRIPTS -->

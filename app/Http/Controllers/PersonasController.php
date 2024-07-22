@@ -11,6 +11,52 @@ class PersonasController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function dni(Request $request){
+
+        $jus = DB::select("select * from justificaciones");
+        $select = "<select id='justificaciones' class='form-control' onchange='habilita_campos()'>
+                <option value='666'>Seleccione</option>
+        ";
+        for($i = 0; $i < count($jus); $i++) {
+             $select.= "<option value='".$jus[$i]->id."' style='background-color: ".$jus[$i]->color.";'>".$jus[$i]->descripcion."</option>";
+        }
+        $select.= "</select>";
+
+        $dni = $request->input('dni');
+        $persona = Personas::where('codigo', $dni)->first();
+       
+        if ($persona) {
+            $cod = '
+                <div class="card" style="">
+                    <div class="row">
+                        <h1 style="text-align:center;">Carga novedad '.$persona->codigo.'</h1>
+                        <div class="col-2">
+                            <div class="card-body">
+                            <img src="http://localhost:8000/img/dipu.png"  style="width: 100%;"  class="img-thumbnail" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="card-body">
+                            <h5 class="card-title">'.$persona->apellido_nombre.' <a href="#" class="btn btn-primary">Ficha</a></h5>
+                            <br>
+                            '.$select.'
+                            <br>
+                            <div id="justificacion"></div>
+                        </div>
+                </div>';
+            return response()->json([
+                'success' => true,
+                'data' => $cod
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Persona no encontrada'
+            ]);
+        }
+    }
+
     public function index()
     {
         $cat_per = DB::select("select count(*) as cant from personas");
