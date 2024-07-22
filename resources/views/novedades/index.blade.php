@@ -81,8 +81,8 @@
 
 function calculo_dias(){
            
-            var fechaInicio = new Date(document.getElementById('fecha_inicio').value);
-            var fechaFin = new Date(document.getElementById('fecha_fin').value);
+            var fechaInicio = new Date(document.getElementById('fecha_desde').value);
+            var fechaFin = new Date(document.getElementById('fecha_hasta').value);
 
             // Asegurarse de que las fechas sean válidas
             if (isNaN(fechaInicio) || isNaN(fechaFin)) {

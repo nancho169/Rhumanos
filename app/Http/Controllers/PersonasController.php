@@ -30,7 +30,7 @@ class PersonasController extends Controller
             $cod = '
                 <div class="card" style="">
                     <div class="row">
-                        <h1 style="text-align:center;">Carga novedad '.$persona->codigo.'</h1>
+                        <h1 style="text-align:center;">Carga novedad <small>'.$persona->codigo.'</small></h1>
                         <div class="col-2">
                             <div class="card-body">
                             <img src="http://localhost:8000/img/dipu.png"  style="width: 100%;"  class="img-thumbnail" alt="...">

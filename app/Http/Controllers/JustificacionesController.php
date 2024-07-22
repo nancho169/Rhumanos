@@ -34,9 +34,8 @@ class JustificacionesController extends Controller
             switch ($justificacion->unidad) {
                 case 'DIA':
                     $campo .= '<label>Fecha desde</label><input type="date" class="form-control" id="fecha_desde" name="fecha_desde">';
-                    $campo .= '<label>Fecha hasta</label><input type="date" class="form-control" id="fecha_desde" name="fecha_hasta">';
-                    $campo .= '<label>Cantidad</label><input type="number" class="form-control" id="cantidad" name="cantidad"><br>';
-                    
+                    $campo .= '<label>Fecha hasta</label><input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta">';
+                    $campo .= '<label>Cantidad</label><input type="number" onclick="calculo_dias()" class="form-control" id="cantidad" name="cantidad"><br>';
                     break;
                 case 'HORA':
                     $campo .= '<label>Horas</label><input type="number" class="form-control" id="hora" name="hora">';
