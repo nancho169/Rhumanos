@@ -97,7 +97,7 @@ function calculo_dias(){
             var milisegundosPorDia = 1000 * 60 * 60 * 24;
             var diferenciaEnDias = Math.ceil(diferenciaEnMilisegundos / milisegundosPorDia);
 
-            document.getElementById('cantidad').value =diferenciaEnDias;
+            document.getElementById('cantidad').value =diferenciaEnDias+1;
        
 }
 

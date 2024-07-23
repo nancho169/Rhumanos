@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\organigrama;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class OrganigramaController extends Controller
 {
     /**
@@ -16,7 +16,10 @@ class OrganigramaController extends Controller
     }
     public function listado()
     {
-        $areas = Organigrama::orderBy('id','desc')->get();
+        $areas = DB::select("SELECT o.id, o.descripcion, o.id_superior,o.version, ga.descripcion as area_inferior from organigramas as o,
+                                (select id, descripcion, id_superior a,version from organigramas) as ga
+                                    where o.id_superior=ga.id or o.id_superior=0; ");
+        //$areas = Organigrama::orderBy('id','desc')->get();
         return view('organigramas.listado', compact('areas'));
         //return response()->json($estructura);
     }

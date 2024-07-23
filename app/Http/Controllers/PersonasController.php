@@ -68,7 +68,7 @@ class PersonasController extends Controller
     public function padron()
     {
         //$table = 'rrhh.persona';
-        $personas = DB::select("select codigo,apellido_nombre,o.descripcion
+        $personas = DB::select("select p.id,codigo,apellido_nombre,o.descripcion
                                     from personas as p, organigramas as o 
                                     where p.organigrama_id=o.id");
 

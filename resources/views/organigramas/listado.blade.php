@@ -15,7 +15,7 @@
             <tr>
                 <th>ID</th>
                 <th>Descripción</th>
-                <th>Id Superior</th>
+                <th>Dependencia</th>
                 <th>Versión</th>
 
             </tr>
@@ -30,7 +30,7 @@
                     {{ $area->descripcion}}
                 </td>
                 <td>
-                    {{ $area->id_superior}}
+                    {{ $area->id_superior}}-{{ $area->area_inferior}}
                 </td>
                 <td>
                     {{ $area->version}}
