@@ -6,6 +6,7 @@ use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\OrganigramaController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\NovedadesController;
+use App\Http\Controllers\CalendarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -68,6 +69,11 @@ Route::post('/relog/migra_archivo', [ExcelController::class, 'uploadExcel'])
 //NOVEDADES
 Route::get('/novedades/index', [NovedadesController::class, 'index'])
     ->name('buscar')
+    ->middleware(['auth', 'verified']);
+
+//CALENDARIO
+Route::get('/calendario/index', [CalendarioController::class, 'index'])
+    ->name('calendario')
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

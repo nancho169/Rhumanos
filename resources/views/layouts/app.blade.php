@@ -100,6 +100,12 @@
                                   
                                 </ul>
                               </li>
+                              <li><a><i class="fa fa-calendar" aria-hidden="true"></i> Calendario <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                  <li><a href="{{route('calendario')}}">Consulta</a></li>
+                                  
+                                </ul>
+                              </li>
                            
                             </ul>
                           </div>
@@ -270,6 +276,7 @@
  <script src="{{asset('js/buttons.html5.js')}}"></script>
  <script src="{{asset('js/buttons.print.js')}}"></script>
  <script src="https://cdn.datatables.net/searchbuilder/1.7.1/js/dataTables.searchBuilder.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 </body>
 @stack('js')
     </body>
