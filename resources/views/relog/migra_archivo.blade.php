@@ -1,9 +1,4 @@
 <x-app-layout>
-<!-- datatable -->
-<link href="{{asset('css/datatables.min.css')}}" rel="stylesheet">
-<link href="{{asset('css/dataTables.dataTables.css')}}" rel="stylesheet">
-<link href="{{asset('css/buttons.dataTables.css')}}" rel="stylesheet">
-<link href="https://cdn.datatables.net/searchbuilder/1.7.1/css/searchBuilder.dataTables.css" rel="stylesheet">
 
 
     <h1 style="text-align:center;"> Archivos fichadas</h1>
@@ -48,16 +43,6 @@
     
 
 <script src="{{asset('js/jquery-3.6.4.min.js')}}"></script>
-<!-- datatable-->
-<script src="{{asset('js/jszip.js')}}"></script>
-<script src="{{asset('js/pdfmake.js')}}"></script>
-<script src="{{asset('js/vfs_fonts.js')}}"></script>
-<script src="{{asset('js/dataTables.js')}}"></script>
-<script src="{{asset('js/dataTables.buttons.js')}}"></script>
-<script src="{{asset('js/buttons.colVis.js')}}"></script>
-<script src="{{asset('js/buttons.html5.js')}}"></script>
-<script src="{{asset('js/buttons.print.js')}}"></script>
-<script src="https://cdn.datatables.net/searchbuilder/1.7.1/js/dataTables.searchBuilder.js"></script>
 
     <script>
         $(document).ready( function () {

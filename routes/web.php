@@ -32,7 +32,7 @@ Route::get('/personas', [PersonasController::class, 'index'])
 Route::get('/personas/padron', [PersonasController::class, 'padron'])
     ->name('padron')
     ->middleware(['auth', 'verified']);
-//llamada Ajax 
+    //llamada Ajax 
 Route::get('/personas', [PersonasController::class, 'dni'])
     ->name('dni')
     ->middleware(['auth', 'verified']);
@@ -46,9 +46,13 @@ Route::get('/organigramas/listado/', [OrganigramaController::class, 'listado'])
 Route::get('/justificaciones/listado/', [JustificacionesController::class, 'listado'])
     ->name('justificaciones')
     ->middleware(['auth', 'verified']);
-//llamada Ajax 
+    //llamada Ajax 
 Route::get('/justificaciones', [JustificacionesController::class, 'justificacion'])
     ->name('justificacion')
+    ->middleware(['auth', 'verified']);
+ 
+Route::post('/novedades/store', [NovedadesController::class, 'store'])
+    ->name('novedades.store')
     ->middleware(['auth', 'verified']);
 
 
@@ -57,7 +61,7 @@ Route::get('/relog', [ExcelController::class, 'relog'])
     ->name('relog')
     ->middleware(['auth', 'verified']);
 
-Route::get('/relog/migra_archivo', [ExcelController::class, 'uploadExcel'])
+Route::post('/relog/migra_archivo', [ExcelController::class, 'uploadExcel'])
     ->name('uploadExcel')
     ->middleware(['auth', 'verified']);
 

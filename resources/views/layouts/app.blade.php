@@ -22,7 +22,13 @@
         }
         </style>
 
-        
+        <!-- datatable -->
+        <link href="{{asset('css/datatables.min.css')}}" rel="stylesheet">
+        <link href="{{asset('css/dataTables.dataTables.css')}}" rel="stylesheet">
+        <link href="{{asset('css/buttons.dataTables.css')}}" rel="stylesheet">
+      <link href="https://cdn.datatables.net/searchbuilder/1.7.1/css/searchBuilder.dataTables.css" rel="stylesheet">
+
+
         <!-- Custom styles for this template -->
         <link href="{{asset('css/bootstrap-icons.min.css')}}" rel="stylesheet">
         <!-- Custom styles for this template -->
@@ -88,10 +94,7 @@
                                   <li><a  href="{{route('justificaciones')}}">Listado</a></li>
                                 </ul>
                               </li>
-                              <li><a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
-                              </svg> Relog <span class="fa fa-chevron-down"></span></a>
+                              <li><a><i class="fa fa-clock-o" aria-hidden="true"></i> Relog <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                   <li><a href="{{route('relog')}}">Carga fichada</a></li>
                                   
@@ -255,6 +258,18 @@
 <script src="{{asset('js/custom.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>
+
+
+ <!-- datatable-->
+ <script src="{{asset('js/jszip.js')}}"></script>
+ <script src="{{asset('js/pdfmake.js')}}"></script>
+ <script src="{{asset('js/vfs_fonts.js')}}"></script>
+ <script src="{{asset('js/dataTables.js')}}"></script>
+ <script src="{{asset('js/dataTables.buttons.js')}}"></script>
+ <script src="{{asset('js/buttons.colVis.js')}}"></script>
+ <script src="{{asset('js/buttons.html5.js')}}"></script>
+ <script src="{{asset('js/buttons.print.js')}}"></script>
+ <script src="https://cdn.datatables.net/searchbuilder/1.7.1/js/dataTables.searchBuilder.js"></script>
 </body>
 @stack('js')
     </body>

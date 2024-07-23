@@ -64,12 +64,12 @@
                         <x-input-error :messages="$errors->get('password')"  />
                   
                 </div>
-                <div class="block mt-4">
+                <!--<div class="block mt-4">
                     <label for="remember_me" class="inline-flex items-center">
                         <input id="remember_me" type="checkbox" class="checkbox" name="remember">
                         <span class="ms-2 text-sm text-gray-600">{{ __('Recordar') }}</span>
                     </label>
-                </div>
+                </div>-->
         
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
@@ -86,8 +86,8 @@
                   <br />
   
                   <div>
-                    <h1><i class="fa fa-user"></i> RR.HH</h1>
-                    <p>2024 n@nch0</p>
+                    <h1><i class="fa fa-users"></i> Recurso Humanos</h1>
+                    <p>2024 Subdirección Informática</p>
                   </div>
   
                 

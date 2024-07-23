@@ -21,6 +21,10 @@ return new class extends Migration
             $table->integer('cantidad');
             $table->boolean('descuento');
             $table->string('referencia');
+            $table->date('fecha_desde');
+            $table->date('fecha_hasta');
+            $table->integer('minutos');
+            $table->integer('hora');
 
         });
     }

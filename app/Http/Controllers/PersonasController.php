@@ -31,6 +31,7 @@ class PersonasController extends Controller
                 <div class="card" style="">
                     <div class="row">
                         <h1 style="text-align:center;">Carga novedad <small>'.$persona->codigo.'</small></h1>
+
                         <div class="col-2">
                             <div class="card-body">
                             <img src="http://localhost:8000/img/dipu.png"  style="width: 100%;"  class="img-thumbnail" alt="...">
@@ -38,13 +39,40 @@ class PersonasController extends Controller
                         </div>
                         <div class="col-10">
                             <div class="card-body">
-                            <h5 class="card-title">'.$persona->apellido_nombre.' <a href="#" class="btn btn-primary">Ficha</a></h5>
+                            <h5 class="card-title">'.$persona->apellido_nombre.' <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ficha</a></h5>
+                            <input type="hidden" name="persona_id" value="' . $persona->id . '">
                             <br>
                             '.$select.'
                             <br>
                             <div id="justificacion"></div>
                         </div>
-                </div>';
+                </div>
+                 
+                        <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel"><b>'.$persona->apellido_nombre.'</b></h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div style="margin: 0px auto;">
+                                        <img src="http://localhost:8000/img/dipu.png"  style="width: 60%; margin: 0px auto;"  class="img-thumbnail" alt="...">
+                                        </div>
+                                        <hr>
+                                        Código: '.$persona->codigo.'<br>
+                                        Apellido y Nombre : '.$persona->apellido_nombre.'<br>
+                                        Área de revista: '.$persona->descripcion.'
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Ficha completa</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                ';
             return response()->json([
                 'success' => true,
                 'data' => $cod
