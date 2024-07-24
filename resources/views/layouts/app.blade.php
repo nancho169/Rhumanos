@@ -26,7 +26,7 @@
         <link href="{{asset('css/datatables.min.css')}}" rel="stylesheet">
         <link href="{{asset('css/dataTables.dataTables.css')}}" rel="stylesheet">
         <link href="{{asset('css/buttons.dataTables.css')}}" rel="stylesheet">
-      <link href="https://cdn.datatables.net/searchbuilder/1.7.1/css/searchBuilder.dataTables.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/searchbuilder/1.7.1/css/searchBuilder.dataTables.css" rel="stylesheet">
 
 
         <!-- Custom styles for this template -->
@@ -35,6 +35,7 @@
         <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
 
         <link href="{{asset('fontawesome/css/font-awesome.min.css')}}" rel="stylesheet">
+        
     </head>
     <body class="nav-md">
         <div class="container body">
@@ -245,6 +246,7 @@
             <!-- Page Content -->
             <div class="right_col" role="main">
                 {{ $slot }}
+               
             </div>
             <footer>
                 <div class="pull-right">
@@ -263,7 +265,7 @@
 <script src="{{asset('bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{asset('js/custom.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>-->
 
 
  <!-- datatable-->
@@ -275,9 +277,12 @@
  <script src="{{asset('js/buttons.colVis.js')}}"></script>
  <script src="{{asset('js/buttons.html5.js')}}"></script>
  <script src="{{asset('js/buttons.print.js')}}"></script>
- <script src="https://cdn.datatables.net/searchbuilder/1.7.1/js/dataTables.searchBuilder.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
-</body>
+ <script src="{{asset('js/dataTables.searchBuilder.js')}}"></script>
+ <script src='{{asset('fullcalendar-6.1.15/dist/index.global.min.js')}}'></script>
+ 
+
+
+
 @stack('js')
     </body>
 </html>
