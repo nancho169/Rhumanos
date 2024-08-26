@@ -40,7 +40,7 @@ class PersonasController extends Controller
                         <div class="col-10">
                             <div class="card-body">
                             <h5 class="card-title">'.$persona->apellido_nombre.' <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ficha</a></h5>
-                            <input type="hidden" name="persona_id" value="' . $persona->id . '">
+                            <input type="hidden" name="persona_id" id="persona_id" value="' . $persona->id . '">
                             <br>
                             '.$select.'
                             <br>

@@ -70,12 +70,14 @@
                               
                               <li><a><i class="fa fa-bookmark" aria-hidden="true"></i> Novedades <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                  <li><a href="{{ route('buscar')}}">Ver</a></li>
+                                  <li><a href="{{ route('buscar')}}">Carga</a></li>
+                                  <li><a href="{{ route('listar')}}">Listar</a></li>
                                 </ul>
                               </li>
                               <li><a><i class="fa fa-user"></i> Personas <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                   <li><a href="{{ route('padron')}}">Padrón</a></li>
+                                  <li><a href="{{ route('antiguedad')}}">Antiguedad</a></li>
                                 </ul>
                               </li>
                               <li><a>
@@ -95,7 +97,7 @@
                                   <li><a  href="{{route('justificaciones')}}">Listado</a></li>
                                 </ul>
                               </li>
-                              <li><a><i class="fa fa-clock-o" aria-hidden="true"></i> Relog <span class="fa fa-chevron-down"></span></a>
+                              <li><a><i class="fa fa-clock-o" aria-hidden="true"></i> Reloj <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                   <li><a href="{{route('relog')}}">Carga fichada</a></li>
                                   
@@ -250,7 +252,7 @@
             </div>
             <footer>
                 <div class="pull-right">
-                  Nancho <a href="https://colorlib.com">Nacho</a>
+                  hcdd <a href="https://colorlib.com">hcdd</a>
                 </div>
                 <div class="clearfix"></div>
               </footer>

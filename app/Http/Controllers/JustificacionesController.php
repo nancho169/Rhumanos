@@ -18,7 +18,6 @@ class JustificacionesController extends Controller
     {
         $justificaciones = Justificaciones::orderBy('id','desc')->get();
         return view('justificaciones.listado', compact('justificaciones'));
-        //return response()->json($estructura);
     }
 
     public function justificacion(Request $request)
@@ -40,12 +39,28 @@ class JustificacionesController extends Controller
         switch ($justificacion->unidad) {
             case 'DIA':
                 $campo .= '
-                    <label>Fecha desde</label>
-                    <input type="date" class="form-control" id="fecha_desde" name="fecha_desde">
-                    <label>Fecha hasta</label>
-                    <input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta">
-                    <label>Cantidad</label>
-                    <input type="number" onclick="calculo_dias()" class="form-control" id="cantidad" name="cantidad"><br>
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Fecha desde</label>
+                            <input type="date" class="form-control" id="fecha_desde" name="fecha_desde">
+                        </div>
+                        <div class="col-6">
+                            <label>Fecha hasta</label>
+                            <input type="date" class="form-control" id="fecha_hasta" name="fecha_hasta">
+                        </div>
+    
+                    </div>
+                    <hr>
+                     <div class="row">
+                        <div class="col-6">
+                            <label>Cantidad<small> solo click para calculo de cantidad de días</small></label>  
+                            <input class="btn btn-secondary" onclick="calculo_dias()" type="button" value="Cantidad días">
+                        </div>
+                        <div class="col-6">
+                            <input type="number"  class="form-control" id="dias" name="dias" >
+                        </div>
+                    </div>
+                    <hr>
                 ';
                 break;
             case 'HORA':
@@ -68,8 +83,9 @@ class JustificacionesController extends Controller
                 $campo = 'Selecciona una magnitud válida.';
                 break;
         }
-
-        $campo .= "<a class='btn btn-primary' onclick='guarda_novedad()'>Guardar</a>";
+        $campo .= "<label>Descripción<small> Campo opcional</small></label>
+                    <input type='text' class='form-control' id='descripcion' name='descripcion'><hr>";
+        $campo .= "<a class='btn btn-success' id='boton_guardar' onclick='guarda_novedad()' disabled>Guardar</a>";
 
         return response()->json([
             'success' => true,

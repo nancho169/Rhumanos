@@ -7,6 +7,8 @@ use App\Http\Controllers\OrganigramaController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\CalendarioController;
+use App\Http\Controllers\antiguedadController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +19,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+//ANTIGUEDAD
+Route::get('/antiguedad', [antiguedadController::class, 'index'])
+    ->name('antiguedad')
+    ->middleware(['auth', 'verified']);
+Route::get('/antiguedad/opciones', [antiguedadController::class, 'opciones'])
+    ->name('opciones')
+    ->middleware(['auth', 'verified']);
 
 //PERFIL
 Route::middleware('auth')->group(function () {
@@ -51,10 +61,7 @@ Route::get('/justificaciones/listado/', [JustificacionesController::class, 'list
 Route::get('/justificaciones', [JustificacionesController::class, 'justificacion'])
     ->name('justificacion')
     ->middleware(['auth', 'verified']);
- 
-Route::post('/novedades/store', [NovedadesController::class, 'store'])
-    ->name('novedades.store')
-    ->middleware(['auth', 'verified']);
+
 
 
 //EXPOTAR EXCEL
@@ -70,6 +77,23 @@ Route::post('/relog/migra_archivo', [ExcelController::class, 'uploadExcel'])
 Route::get('/novedades/index', [NovedadesController::class, 'index'])
     ->name('buscar')
     ->middleware(['auth', 'verified']);
+
+Route::get('/novedades/listar', [NovedadesController::class, 'listar'])
+    ->name('listar')
+    ->middleware(['auth', 'verified']);
+
+Route::get('/novedades', [NovedadesController::class, 'novedades_por_usuario'])
+    ->name('novedades_por_usuario')
+    ->middleware(['auth', 'verified']);
+//AUTOCOMPLETAR
+Route::get('/novedades/autocompletado', [NovedadesController::class, 'autocompletado'])
+    ->name('autocompletado')
+    ->middleware(['auth', 'verified']);
+//GUARDA NOVEDAD
+Route::get('/novedades/store', [NovedadesController::class, 'store'])
+    ->name('novedades.store')
+    ->middleware(['auth', 'verified']);
+
 
 //CALENDARIO
 Route::get('/calendario/index', [CalendarioController::class, 'index'])
