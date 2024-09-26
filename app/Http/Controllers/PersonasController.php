@@ -24,13 +24,13 @@ class PersonasController extends Controller
         $select.= "</select>";
 
         $dni = $request->input('dni');
-        $persona = Personas::where('codigo', $dni)->first();
+        $persona = Personas::where('dni', $dni)->first();
        
         if ($persona) {
             $cod = '
                 <div class="card" style="">
                     <div class="row">
-                        <h1 style="text-align:center;">Carga novedad <small>'.$persona->codigo.'</small></h1>
+                        <h1 style="text-align:center;">Carga novedad <small>'.$persona->dni.'</small></h1>
 
                         <div class="col-2">
                             <div class="card-body">

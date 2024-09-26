@@ -46,7 +46,7 @@ class antiguedadController extends Controller
           
                 <div class="col">
                     <h2>Ente</h2>
-                    <select class="form-control">
+                    <select class="form-control" id="ambito">
                         <option value="nacional">Seleccione</option>
                         <option value="estatal">Estatal</option>
                         <option value="privado">Privado</option>
@@ -54,7 +54,7 @@ class antiguedadController extends Controller
                 </div>
                 <div class="col">
                     <h2>Lugar</h2>
-                    <input type="text" class="form-control" placeholder="lugar" required>
+                    <input type="text" class="form-control" placeholder="lugar" id="lugar" required>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -71,6 +71,7 @@ class antiguedadController extends Controller
                     </div>
                 </div>
                 <br>
+                 <button type="btn btn-primary" class="btn btn-primary"  onclick="guarda_antiguedad()">Guardar</button>
             </div>
             <br>
         </div>

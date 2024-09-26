@@ -25,7 +25,7 @@ class NovedadesController extends Controller
     public function novedades_por_usuario(Request $request){
 
         $doc = $request->dni;
-        $nov = DB::select('SELECT per.apellido_nombre,nov.justificaciones_id,jus.color,jus.descripcion,nov.fecha_desde,nov.fecha_hasta,nov.fecha_creacion,nov.dias,nov.hora,nov.minutos FROM novedades as nov inner join personas as per ON nov.personas_id=per.id inner join justificaciones as jus on nov.justificaciones_id=jus.id WHERE per.codigo='.$doc);
+        $nov = DB::select('SELECT per.apellido_nombre,nov.justificaciones_id,jus.color,jus.descripcion,nov.fecha_desde,nov.fecha_hasta,nov.fecha_creacion,nov.dias,nov.hora,nov.minutos FROM novedades as nov inner join personas as per ON nov.personas_id=per.id inner join justificaciones as jus on nov.justificaciones_id=jus.id WHERE per.dni='.$doc);
         
         if($nov){
             $tabla ="<thead>
@@ -136,11 +136,11 @@ class NovedadesController extends Controller
     public function autocompletado(Request $request){
         
         $dni = $request->dni;
-        $per = DB::select("select id, codigo,apellido_nombre from personas where apellido_nombre like '".$dni."%'    
-                            or codigo like '".$dni."%' limit 10");
+        $per = DB::select("select id, dni,apellido_nombre from personas where apellido_nombre like '".$dni."%'    
+                            or dni like '".$dni."%' limit 10");
         $options = "";
         for($i = 0; $i < count($per); $i++) {
-            $options .= "<option value='".$per[$i]->apellido_nombre."'>".$per[$i]->codigo."</option>";
+            $options .= "<option value='".$per[$i]->apellido_nombre."'>".$per[$i]->dni."</option>";
         }                            
         return response()->json([
             'success' => true,

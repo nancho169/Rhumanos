@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('minutos');
             $table->integer('dias');
             $table->timestamp('fecha_creacion')->nullable();
+            $table->date('fecha_desde');
+            $table->date('fecha_hasta');
             /* Inlcuye el id de persona*/
             $table->unsignedBigInteger('personas_id');
             $table->foreign('personas_id')->references('id')->on('personas')->onDelete('cascade');

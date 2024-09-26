@@ -34,6 +34,19 @@
 </x-app-layout>
 
 <script>
+  function guarda_antiguedad(){
+
+    var amb = document.getElementById('ambito').value;
+    var lug = document.getElementById('lugar').value;
+    var d = document.getElementById('dia').value;
+    var m = document.getElementById('mes').value;
+    var a = document.getElementById('anio').value;
+
+    //alert(amb+" - "+lug);
+    //alert(d+" - "+m+" - "+a);
+
+
+  }
    function menu_antiguedad(){
      var doc = document.getElementById('cod').value;
     
